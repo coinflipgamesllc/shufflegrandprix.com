@@ -1,0 +1,242 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+/*!
+ * Start Bootstrap - Landing Page Bootstrap Theme (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+    background: url("/assets/img/gplaypattern.png");
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+}
+
+.lead {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.navbar {
+    border-bottom: 2pt solid #0f0f0f;
+    background: url("/assets/img/gplaypattern.png");
+}
+
+.intro-header {
+    padding-top: 50px;
+    text-align: right;
+    color: #f8f8f8;
+    border-bottom: 2pt solid #0f0f0f;
+    position: relative;
+    z-index: 1;
+}
+
+.header-carousel-item {
+    min-height: 580px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+#header-carousel-item-0 {
+    background-image: url("/assets/img/promoScreen2.png");
+}
+#header-carousel-item-1 {
+    background-image: url("/assets/img/promoScreen1.png");
+}
+
+.carousel-overlay {
+    position: absolute;
+    bottom: 100px;
+    right: 0;
+    left: 0;
+}
+
+.intro-message > h1 {
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    font-size: 5em;
+}
+
+.intro-divider {
+    width: 400px;
+    border-top: 2pt solid #0f0f0f;
+    border-bottom: 2pt solid #0f0f0f;
+}
+
+.intro-message > h3 {
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+}
+
+.intro-social-buttons {
+    float: right;
+    padding: 50px;
+    margin: -75px 50px;
+    position: relative;
+    z-index: 2;
+}
+
+.game-description {
+    margin-top: -20px;
+    padding-top: 80px;
+    text-align: center;
+    border: 2pt solid #0f0f0f;
+    background-color: rgba(255,255,255,0.5);
+}
+
+.btn {
+    box-shadow: 0px 0px 0px 2pt #0f0f0f;
+}
+
+@media(max-width:767px) {
+    .intro-message {
+        padding-bottom: 15%;
+    }
+
+    .intro-message > h1 {
+        font-size: 3em;
+    }
+
+    ul.intro-social-buttons > li {
+        display: block;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+
+    ul.intro-social-buttons > li:last-child {
+        margin-bottom: 100px;
+    }
+
+    .intro-divider {
+        width: 100%;
+    }
+}
+
+.network-name {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.content-section-a {
+    padding: 50px 0;
+    background-color: #f8f8f8;
+}
+
+.content-section-b {
+    padding: 50px 0;
+    border-top: 1px solid #e7e7e7;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.section-heading {
+    margin-bottom: 30px;
+}
+
+.section-heading-spacer {
+    float: left;
+    width: 200px;
+    border-top: 3px solid #e7e7e7;
+}
+
+.banner {
+    padding: 100px 0;
+    color: #f8f8f8;
+    background: url("/assets/img/banner-bg.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.banner h2 {
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    font-size: 3em;
+}
+
+.banner ul {
+    margin-bottom: 0;
+}
+
+.banner-social-buttons {
+    float: right;
+    margin-top: 0;
+}
+
+@media(max-width:1199px) {
+    ul.banner-social-buttons {
+        float: left;
+        margin-top: 15px;
+    }
+}
+
+@media(max-width:767px) {
+    .banner h2 {
+        margin: 0;
+        text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+        font-size: 3em;
+    }
+
+    ul.banner-social-buttons > li {
+        display: block;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+
+    ul.banner-social-buttons > li:last-child {
+        margin-bottom: 0;
+    }
+}
+
+footer {
+    
+}
+
+p.copyright {
+    margin: 15px 0 0;
+}
+
+.blog-posts {
+    margin-top: 50px;
+}
+
+.blog-post {
+    padding: 15px;
+    text-align: center;
+    border: 2pt solid #0f0f0f;
+    background-color: rgba(255,255,255,0.5);
+}
+
+.blog-post-title {
+    margin: 10px;
+    padding-bottom: 20px;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    font-size: 3em;
+    color: #777;
+}
+
+.blog-post-date {
+    text-align: right;
+}
+
+.blog-post-content {
+    text-align: left;
+}
+
+.blog-post-content img {
+    // float: left;
+    margin: 20px;
+    // border: 2pt solid #0f0f0f;
+}

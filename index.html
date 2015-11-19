@@ -1,0 +1,84 @@
+---
+layout: default
+---
+
+<div class="intro-header">
+  <div id="headerCarousel" class="carousel slide" data-interval="3000" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#headerCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#headerCarousel" data-slide-to="1"></li>
+    </ol> 
+
+    <div class="carousel-inner">
+      <div id="header-carousel-item-0" class="active item header-carousel-item"></div>
+      <div id="header-carousel-item-1" class="item header-carousel-item"></div>
+    </div>
+
+    <div class="container carousel-overlay text-center intro-message">
+      <h1>Shuffle Grand Prix</h1>
+      <h3 class="lead">Fast-paced futuristic hover-bike racing game</h3>
+    </div>
+
+    <a class="carousel-control left" href="#headerCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="carousel-control right" href="#headerCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+  </div>
+</div>
+
+<div class="content">
+  <ul class="list-inline intro-social-buttons">
+    <li>
+      <a href="https://twitter.com/CoinFlipGames" class="btn btn-info btn-lg" target="_blank"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/coinflipgames" class="btn btn-primary btn-lg" target="_blank"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
+    </li>
+    <li>
+      <a href="http://coinflipgames.co/blog" class="btn btn-warning btn-lg" target="_blank"><i class="fa fa-comment fa-fw"></i> <span class="network-name">Blog</span></a>
+    </li>
+  </ul>
+</div>
+
+<div class="content">
+  <div class="container">
+    <div class="row game-description jumbotron">
+      <p>Shuffle Grand Prix is a fast-paced futuristic hover-bike racing game! Race for glory across randomly generated tracks in a wide variety of environments. Share your favorite randomly generated tracks with friends and foes.</p>
+    </div>
+  </div>
+</div>
+
+<div class="content"><div class="container blog-posts"></div></div>
+
+<script>
+    $(document).ready(function() {
+        $('#headerCarousel').carousel({
+          'interval': 5000
+        });
+
+        $.ajax({
+          url: document.location.protocol + '//ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=10&callback=?&q=' + encodeURIComponent('{{ site.blog_feed_url }}'),
+          dataType: 'json',
+          success: function (data) {
+            if (data.responseData.feed && data.responseData.feed.entries) {
+              $.each(data.responseData.feed.entries, function (i, e) {
+                // Don't do this at home, kids!
+                // What we have here is a "hack"
+                var pattern = /img src="\/assets\/img\/posts\//g
+                var replace = 'img src="http://coinflipgamesllc.github.io/assets/img/posts/'
+                var cleaned = e.content.replace(pattern, replace);
+
+                var blogPost = $('<div class="row blog-post"/>')
+                  .append('<h4 class="blog-post-title">' + e.title + '</h4>')
+                  .append('<span class="text-muted small blog-post-date">' + e.publishedDate + '</span>')
+                  .append('<div class="blog-post-content">' + cleaned + '</div>');
+
+                $('.blog-posts').append(blogPost);
+              });
+            }
+          }
+        });
+    });
+</script>
